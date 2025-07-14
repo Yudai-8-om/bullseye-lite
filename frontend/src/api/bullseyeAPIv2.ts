@@ -1,6 +1,7 @@
 import { Metrics } from "../api/Metrics";
 
-const baseUrl = "http://localhost:3000";
+// const baseUrl = "http://192.168.50.50:3000"; // dev
+const baseUrl = "/api";
 
 export async function getMetrics(ticker: string): Promise<Metrics> {
   const url = `${baseUrl}/companies/${ticker.toLowerCase()}`;

@@ -101,9 +101,9 @@ async fn handle_socket(mut socket: WebSocket) {
 async fn main() {
     // build our application with a single route
     let allowed_origins = vec![
-        "http://localhost".parse().unwrap(),
-        "http://localhost:80".parse().unwrap(),
-        "http://localhost:5173".parse().unwrap(), // only dev
+        "http://192.168.50.50".parse().unwrap(),
+        "http://localhost:5173".parse().unwrap(),
+        "http://192.168.50.50:5173".parse().unwrap(), // only dev
     ];
     let cors = CorsLayer::new()
         .allow_origin(allowed_origins)
@@ -112,7 +112,7 @@ async fn main() {
     let app = Router::new()
         .route("/screener", get(list_all))
         .route("/companies/{ticker}", get(search))
-        .route("/wstest", get(get_stock_price))
+        .route("/ws", get(get_stock_price))
         .with_state(pool)
         .layer(cors);
 

@@ -8,7 +8,7 @@ function WebSocketComponent() {
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:3000/wstest");
+    const socket = new WebSocket("ws://192.168.50.50/ws");
     socket.onopen = () => {
       console.log("Connected");
       intervalRef.current = setInterval(() => {
