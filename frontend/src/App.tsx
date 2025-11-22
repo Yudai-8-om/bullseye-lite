@@ -28,13 +28,15 @@ function App() {
   return (
     <>
       <header className="bg-green-400 py-4 h-20 flex items-center justify-around">
-        <div className="font-bold text-2xl">BullsEye</div>
+        <a href="/" className="font-bold text-2xl text-black no-underline">
+          BullsEye
+        </a>
         <NavLink
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-sm/6 font-bold text-green-900 no-underline border-blue-600"
-              : "text-sm/6 font-semibold text-gray-900 no-underline hover:text-blue-600"
+              ? "text-sm/6 font-bold text-green-900 no-underline border-blue-600 hidden sm:flex"
+              : "text-sm/6 font-semibold text-gray-900 no-underline hover:text-blue-600 hidden sm:flex"
           }
         >
           Screener
@@ -43,8 +45,8 @@ function App() {
           to="/search"
           className={({ isActive }) =>
             isActive
-              ? "text-sm/6 font-bold text-green-900 no-underline  border-blue-600"
-              : "text-sm/6 font-semibold text-gray-900 no-underline hover:text-blue-600"
+              ? "text-sm/6 font-bold text-green-900 no-underline  border-blue-600 hidden sm:flex"
+              : "text-sm/6 font-semibold text-gray-900 no-underline hover:text-blue-600 hidden sm:flex"
           }
         >
           Search

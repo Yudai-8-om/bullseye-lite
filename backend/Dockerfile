@@ -8,7 +8,7 @@ COPY Cargo.toml Cargo.lock ./
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 RUN mkdir -p api/src && echo "fn dummy() {}" > api/src/lib.rs
 COPY api/Cargo.toml ./api/Cargo.toml
-RUN cargo build --release
+RUN cargo build
 RUN rm src/main.rs
 RUN rm api/src/lib.rs
 

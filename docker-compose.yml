@@ -36,10 +36,11 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - bullseye_backend
+      bullseye_backend:
+        condition: service_started
 
   chromedriver:
-    image: selenium/standalone-chrome:137.0.7151.119-chromedriver-137.0.7151.119-20250707
+    image: selenium/standalone-chrome:142.0.7444.59-chromedriver-142.0.7444.59-20251101
     container_name: chromedriver
     shm_size: 2gb
     ports:
